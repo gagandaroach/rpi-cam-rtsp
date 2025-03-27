@@ -1,0 +1,16 @@
+
+services:
+  rtsp-server:
+    image: bluenviron/mediamtx:latest
+    container_name: rtsp-server
+    network_mode: host
+    volumes:
+      - ./mediamtx.yml:/mediamtx.yml
+#    environment:
+#      - MTX_PROTOCOLS=tcp
+#      - MTX_PATHS_TEST_SOURCE=rtsp://example.com/test
+    restart: unless-stopped
+
+volumes:
+  mediamtx-config:
+
